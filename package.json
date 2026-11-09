@@ -1,0 +1,19 @@
+{
+  "name": "@fundbest/protobuf",
+  "version": "1.0.0",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    "./market/v1/market_pb": {
+      "types": "./gen/ts/market/v1/market_pb.ts",
+      "default": "./gen/ts/market/v1/market_pb.ts"
+    }
+  },
+  "files": [
+    "gen/ts",
+    "package.json"
+  ],
+  "peerDependencies": {
+    "@bufbuild/protobuf": "^2.6.0"
+  }
+}
