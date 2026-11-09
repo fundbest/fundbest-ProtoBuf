@@ -1,27 +1,23 @@
-
-.PHONY: generate lint format breaking clean check
+.PHONY: generate lint format breaking clean check build-python
 
 BUF ?= buf
 
-# Generate Go, TypeScript and Python code
 generate:
 	$(BUF) generate
 
-# Validate protobuf definitions
 lint:
 	$(BUF) lint
 
-# Format protobuf files
 format:
 	$(BUF) format -w
 
-# Check backward compatibility against main
 breaking:
 	$(BUF) breaking --against '.git#branch=main'
 
-# Remove generated files
 clean:
-	rm -rf gen/go gen/ts gen/python
+	rm -rf gen/go gen/ts gen/python build dist
 
-# Run all validations
+build-python:
+	python -m build --wheel --no-isolation
+
 check: lint breaking

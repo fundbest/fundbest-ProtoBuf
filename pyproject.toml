@@ -7,10 +7,10 @@ name = "fundbest-protobuf"
 version = "1.0.0"
 requires-python = ">=3.9"
 dependencies = [
-   "protobuf==6.33.5"
+    "protobuf==6.33.5"
 ]
 
 [tool.setuptools.packages.find]
 where = ["gen/python"]
-include = ["fundbest*"]
+include = ["market*"]
 namespaces = true
