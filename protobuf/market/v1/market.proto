@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package market.v1;
 
-option go_package = "github.com/fundbest/fundbest-ProtoBuf/gen/go/market/v1;marketv1";
+option go_package = "github.com/fundbest/fundbest-protobuf/gen/go/market/v1;marketv1";
 
 message Tick {
   uint32 symbol_id = 1;

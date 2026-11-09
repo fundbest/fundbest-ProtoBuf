@@ -24,14 +24,14 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16market/v1/market.proto\x12\tmarket.v1\"`\n\x04Tick\x12\x1b\n\tsymbol_id\x18\x01 \x01(\rR\x08symbolId\x12\x10\n\x03\x62id\x18\x02 \x01(\x03R\x03\x62id\x12\x10\n\x03\x61sk\x18\x03 \x01(\x03R\x03\x61sk\x12\x17\n\x07time_ms\x18\x04 \x01(\x03R\x06timeMs\"^\n\x06\x43\x61ndle\x12\x0e\n\x02ts\x18\x01 \x01(\x03R\x02ts\x12\x0c\n\x01o\x18\x02 \x01(\x03R\x01o\x12\x0c\n\x01h\x18\x03 \x01(\x03R\x01h\x12\x0c\n\x01l\x18\x04 \x01(\x03R\x01l\x12\x0c\n\x01\x63\x18\x05 \x01(\x03R\x01\x63\x12\x0c\n\x01v\x18\x06 \x01(\rR\x01v\"d\n\nLiveCandle\x12\x1b\n\tsymbol_id\x18\x01 \x01(\rR\x08symbolId\x12\x0e\n\x02tf\x18\x02 \x01(\rR\x02tf\x12)\n\x06\x63\x61ndle\x18\x03 \x01(\x0b\x32\x11.market.v1.CandleR\x06\x63\x61ndleBAZ?github.com/fundbest/fundbest-ProtoBuf/gen/go/market/v1;marketv1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16market/v1/market.proto\x12\tmarket.v1\"`\n\x04Tick\x12\x1b\n\tsymbol_id\x18\x01 \x01(\rR\x08symbolId\x12\x10\n\x03\x62id\x18\x02 \x01(\x03R\x03\x62id\x12\x10\n\x03\x61sk\x18\x03 \x01(\x03R\x03\x61sk\x12\x17\n\x07time_ms\x18\x04 \x01(\x03R\x06timeMs\"^\n\x06\x43\x61ndle\x12\x0e\n\x02ts\x18\x01 \x01(\x03R\x02ts\x12\x0c\n\x01o\x18\x02 \x01(\x03R\x01o\x12\x0c\n\x01h\x18\x03 \x01(\x03R\x01h\x12\x0c\n\x01l\x18\x04 \x01(\x03R\x01l\x12\x0c\n\x01\x63\x18\x05 \x01(\x03R\x01\x63\x12\x0c\n\x01v\x18\x06 \x01(\rR\x01v\"d\n\nLiveCandle\x12\x1b\n\tsymbol_id\x18\x01 \x01(\rR\x08symbolId\x12\x0e\n\x02tf\x18\x02 \x01(\rR\x02tf\x12)\n\x06\x63\x61ndle\x18\x03 \x01(\x0b\x32\x11.market.v1.CandleR\x06\x63\x61ndleBAZ?github.com/fundbest/fundbest-protobuf/gen/go/market/v1;marketv1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'market.v1.market_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'Z?github.com/fundbest/fundbest-ProtoBuf/gen/go/market/v1;marketv1'
+  _globals['DESCRIPTOR']._serialized_options = b'Z?github.com/fundbest/fundbest-protobuf/gen/go/market/v1;marketv1'
   _globals['_TICK']._serialized_start=37
   _globals['_TICK']._serialized_end=133
   _globals['_CANDLE']._serialized_start=135

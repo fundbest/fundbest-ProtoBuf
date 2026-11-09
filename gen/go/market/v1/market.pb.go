@@ -254,7 +254,7 @@ const file_market_v1_market_proto_rawDesc = "" +
 	"LiveCandle\x12\x1b\n" +
 	"\tsymbol_id\x18\x01 \x01(\rR\bsymbolId\x12\x0e\n" +
 	"\x02tf\x18\x02 \x01(\rR\x02tf\x12)\n" +
-	"\x06candle\x18\x03 \x01(\v2\x11.market.v1.CandleR\x06candleBAZ?github.com/fundbest/fundbest-ProtoBuf/gen/go/market/v1;marketv1b\x06proto3"
+	"\x06candle\x18\x03 \x01(\v2\x11.market.v1.CandleR\x06candleBAZ?github.com/fundbest/fundbest-protobuf/gen/go/market/v1;marketv1b\x06proto3"
 
 var (
 	file_market_v1_market_proto_rawDescOnce sync.Once
