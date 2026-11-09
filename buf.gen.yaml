@@ -1,0 +1,21 @@
+
+version: v2
+
+clean: true
+
+plugins:
+  # Go
+  - local: protoc-gen-go
+    out: gen/go
+    opt:
+      - paths=source_relative
+
+  # TypeScript
+  - remote: buf.build/bufbuild/es:v2.6.1
+    out: gen/ts
+    opt:
+      - target=ts
+
+  # Python
+  - remote: buf.build/protocolbuffers/python:v33.0
+    out: gen/python
