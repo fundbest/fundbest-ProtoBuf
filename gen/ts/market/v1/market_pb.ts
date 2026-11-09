@@ -10,7 +10,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file market/v1/market.proto.
  */
 export const file_market_v1_market: GenFile = /*@__PURE__*/
-  fileDesc("ChZtYXJrZXQvdjEvbWFya2V0LnByb3RvEgltYXJrZXQudjEiRAoEVGljaxIRCglzeW1ib2xfaWQYASABKA0SCwoDYmlkGAIgASgDEgsKA2FzaxgDIAEoAxIPCgd0aW1lX21zGAQgASgDIksKBkNhbmRsZRIKCgJ0cxgBIAEoAxIJCgFvGAIgASgDEgkKAWgYAyABKAMSCQoBbBgEIAEoAxIJCgFjGAUgASgDEgkKAXYYBiABKA0iTgoKTGl2ZUNhbmRsZRIRCglzeW1ib2xfaWQYASABKA0SCgoCdGYYAiABKA0SIQoGY2FuZGxlGAMgASgLMhEubWFya2V0LnYxLkNhbmRsZUJBWj9naXRodWIuY29tL2Z1bmRiZXN0L2Z1bmRiZXN0LXByb3RvYnVmL2dlbi9nby9tYXJrZXQvdjE7bWFya2V0djFiBnByb3RvMw");
+  fileDesc("ChZtYXJrZXQvdjEvbWFya2V0LnByb3RvEgltYXJrZXQudjEiRAoEVGljaxIRCglzeW1ib2xfaWQYASABKA0SCwoDYmlkGAIgASgDEgsKA2FzaxgDIAEoAxIPCgd0aW1lX21zGAQgASgDIksKBkNhbmRsZRIKCgJ0cxgBIAEoAxIJCgFvGAIgASgDEgkKAWgYAyABKAMSCQoBbBgEIAEoAxIJCgFjGAUgASgDEgkKAXYYBiABKA0imwEKB0NhbmRsZXMSEQoJc3ltYm9sX2lkGAEgASgNEgoKAnRmGAIgASgNEg4KBmRpZ2l0cxgDIAEoDRIJCgF0GAQgAygDEgkKAW8YBSADKBISCQoBaBgGIAMoAxIJCgFsGAcgAygDEgkKAWMYCCADKBISCQoBdhgJIAMoAxIfCgRsaXZlGAogASgLMhEubWFya2V0LnYxLkNhbmRsZUJBWj9naXRodWIuY29tL2Z1bmRiZXN0L2Z1bmRiZXN0LXByb3RvYnVmL2dlbi9nby9tYXJrZXQvdjE7bWFya2V0djFiBnByb3RvMw");
 
 /**
  * @generated from message market.v1.Tick
@@ -87,9 +87,9 @@ export const CandleSchema: GenMessage<Candle> = /*@__PURE__*/
   messageDesc(file_market_v1_market, 1);
 
 /**
- * @generated from message market.v1.LiveCandle
+ * @generated from message market.v1.Candles
  */
-export type LiveCandle = Message<"market.v1.LiveCandle"> & {
+export type Candles = Message<"market.v1.Candles"> & {
   /**
    * @generated from field: uint32 symbol_id = 1;
    */
@@ -101,15 +101,50 @@ export type LiveCandle = Message<"market.v1.LiveCandle"> & {
   tf: number;
 
   /**
-   * @generated from field: market.v1.Candle candle = 3;
+   * @generated from field: uint32 digits = 3;
    */
-  candle?: Candle;
+  digits: number;
+
+  /**
+   * @generated from field: repeated int64 t = 4;
+   */
+  t: bigint[];
+
+  /**
+   * @generated from field: repeated sint64 o = 5;
+   */
+  o: bigint[];
+
+  /**
+   * @generated from field: repeated int64 h = 6;
+   */
+  h: bigint[];
+
+  /**
+   * @generated from field: repeated int64 l = 7;
+   */
+  l: bigint[];
+
+  /**
+   * @generated from field: repeated sint64 c = 8;
+   */
+  c: bigint[];
+
+  /**
+   * @generated from field: repeated int64 v = 9;
+   */
+  v: bigint[];
+
+  /**
+   * @generated from field: market.v1.Candle live = 10;
+   */
+  live?: Candle;
 };
 
 /**
- * Describes the message market.v1.LiveCandle.
- * Use `create(LiveCandleSchema)` to create a new message.
+ * Describes the message market.v1.Candles.
+ * Use `create(CandlesSchema)` to create a new message.
  */
-export const LiveCandleSchema: GenMessage<LiveCandle> = /*@__PURE__*/
+export const CandlesSchema: GenMessage<Candles> = /*@__PURE__*/
   messageDesc(file_market_v1_market, 2);
 

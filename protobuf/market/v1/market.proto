@@ -20,8 +20,15 @@ message Candle {
   uint32 v = 6;
 }
 
-message LiveCandle {
+message Candles {
   uint32 symbol_id = 1;
   uint32 tf = 2;
-  Candle candle = 3;
+  uint32 digits = 3;
+  repeated int64 t = 4;
+  repeated sint64 o = 5;
+  repeated int64 h = 6;
+  repeated int64 l = 7;
+  repeated sint64 c = 8;
+  repeated int64 v = 9;
+  Candle live = 10;
 }

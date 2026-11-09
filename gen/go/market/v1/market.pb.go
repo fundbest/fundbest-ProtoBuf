@@ -173,29 +173,36 @@ func (x *Candle) GetV() uint32 {
 	return 0
 }
 
-type LiveCandle struct {
+type Candles struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	SymbolId      uint32                 `protobuf:"varint,1,opt,name=symbol_id,json=symbolId,proto3" json:"symbol_id,omitempty"`
 	Tf            uint32                 `protobuf:"varint,2,opt,name=tf,proto3" json:"tf,omitempty"`
-	Candle        *Candle                `protobuf:"bytes,3,opt,name=candle,proto3" json:"candle,omitempty"`
+	Digits        uint32                 `protobuf:"varint,3,opt,name=digits,proto3" json:"digits,omitempty"`
+	T             []int64                `protobuf:"varint,4,rep,packed,name=t,proto3" json:"t,omitempty"`
+	O             []int64                `protobuf:"zigzag64,5,rep,packed,name=o,proto3" json:"o,omitempty"`
+	H             []int64                `protobuf:"varint,6,rep,packed,name=h,proto3" json:"h,omitempty"`
+	L             []int64                `protobuf:"varint,7,rep,packed,name=l,proto3" json:"l,omitempty"`
+	C             []int64                `protobuf:"zigzag64,8,rep,packed,name=c,proto3" json:"c,omitempty"`
+	V             []int64                `protobuf:"varint,9,rep,packed,name=v,proto3" json:"v,omitempty"`
+	Live          *Candle                `protobuf:"bytes,10,opt,name=live,proto3" json:"live,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *LiveCandle) Reset() {
-	*x = LiveCandle{}
+func (x *Candles) Reset() {
+	*x = Candles{}
 	mi := &file_market_v1_market_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *LiveCandle) String() string {
+func (x *Candles) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*LiveCandle) ProtoMessage() {}
+func (*Candles) ProtoMessage() {}
 
-func (x *LiveCandle) ProtoReflect() protoreflect.Message {
+func (x *Candles) ProtoReflect() protoreflect.Message {
 	mi := &file_market_v1_market_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -207,28 +214,77 @@ func (x *LiveCandle) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use LiveCandle.ProtoReflect.Descriptor instead.
-func (*LiveCandle) Descriptor() ([]byte, []int) {
+// Deprecated: Use Candles.ProtoReflect.Descriptor instead.
+func (*Candles) Descriptor() ([]byte, []int) {
 	return file_market_v1_market_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *LiveCandle) GetSymbolId() uint32 {
+func (x *Candles) GetSymbolId() uint32 {
 	if x != nil {
 		return x.SymbolId
 	}
 	return 0
 }
 
-func (x *LiveCandle) GetTf() uint32 {
+func (x *Candles) GetTf() uint32 {
 	if x != nil {
 		return x.Tf
 	}
 	return 0
 }
 
-func (x *LiveCandle) GetCandle() *Candle {
+func (x *Candles) GetDigits() uint32 {
 	if x != nil {
-		return x.Candle
+		return x.Digits
+	}
+	return 0
+}
+
+func (x *Candles) GetT() []int64 {
+	if x != nil {
+		return x.T
+	}
+	return nil
+}
+
+func (x *Candles) GetO() []int64 {
+	if x != nil {
+		return x.O
+	}
+	return nil
+}
+
+func (x *Candles) GetH() []int64 {
+	if x != nil {
+		return x.H
+	}
+	return nil
+}
+
+func (x *Candles) GetL() []int64 {
+	if x != nil {
+		return x.L
+	}
+	return nil
+}
+
+func (x *Candles) GetC() []int64 {
+	if x != nil {
+		return x.C
+	}
+	return nil
+}
+
+func (x *Candles) GetV() []int64 {
+	if x != nil {
+		return x.V
+	}
+	return nil
+}
+
+func (x *Candles) GetLive() *Candle {
+	if x != nil {
+		return x.Live
 	}
 	return nil
 }
@@ -249,12 +305,19 @@ const file_market_v1_market_proto_rawDesc = "" +
 	"\x01h\x18\x03 \x01(\x03R\x01h\x12\f\n" +
 	"\x01l\x18\x04 \x01(\x03R\x01l\x12\f\n" +
 	"\x01c\x18\x05 \x01(\x03R\x01c\x12\f\n" +
-	"\x01v\x18\x06 \x01(\rR\x01v\"d\n" +
-	"\n" +
-	"LiveCandle\x12\x1b\n" +
+	"\x01v\x18\x06 \x01(\rR\x01v\"\xc9\x01\n" +
+	"\aCandles\x12\x1b\n" +
 	"\tsymbol_id\x18\x01 \x01(\rR\bsymbolId\x12\x0e\n" +
-	"\x02tf\x18\x02 \x01(\rR\x02tf\x12)\n" +
-	"\x06candle\x18\x03 \x01(\v2\x11.market.v1.CandleR\x06candleBAZ?github.com/fundbest/fundbest-protobuf/gen/go/market/v1;marketv1b\x06proto3"
+	"\x02tf\x18\x02 \x01(\rR\x02tf\x12\x16\n" +
+	"\x06digits\x18\x03 \x01(\rR\x06digits\x12\f\n" +
+	"\x01t\x18\x04 \x03(\x03R\x01t\x12\f\n" +
+	"\x01o\x18\x05 \x03(\x12R\x01o\x12\f\n" +
+	"\x01h\x18\x06 \x03(\x03R\x01h\x12\f\n" +
+	"\x01l\x18\a \x03(\x03R\x01l\x12\f\n" +
+	"\x01c\x18\b \x03(\x12R\x01c\x12\f\n" +
+	"\x01v\x18\t \x03(\x03R\x01v\x12%\n" +
+	"\x04live\x18\n" +
+	" \x01(\v2\x11.market.v1.CandleR\x04liveBAZ?github.com/fundbest/fundbest-protobuf/gen/go/market/v1;marketv1b\x06proto3"
 
 var (
 	file_market_v1_market_proto_rawDescOnce sync.Once
@@ -270,12 +333,12 @@ func file_market_v1_market_proto_rawDescGZIP() []byte {
 
 var file_market_v1_market_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_market_v1_market_proto_goTypes = []any{
-	(*Tick)(nil),       // 0: market.v1.Tick
-	(*Candle)(nil),     // 1: market.v1.Candle
-	(*LiveCandle)(nil), // 2: market.v1.LiveCandle
+	(*Tick)(nil),    // 0: market.v1.Tick
+	(*Candle)(nil),  // 1: market.v1.Candle
+	(*Candles)(nil), // 2: market.v1.Candles
 }
 var file_market_v1_market_proto_depIdxs = []int32{
-	1, // 0: market.v1.LiveCandle.candle:type_name -> market.v1.Candle
+	1, // 0: market.v1.Candles.live:type_name -> market.v1.Candle
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name
